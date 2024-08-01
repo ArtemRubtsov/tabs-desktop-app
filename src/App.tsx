@@ -7,7 +7,6 @@ import { Auth } from './components/Auth/Auth';
 
 const App: React.FC = () => {
 
-    
     const [isAuth, setAuth] = useState(false)
 
     return (

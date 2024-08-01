@@ -9,14 +9,16 @@ edition = "2021"
 tauri-build = { version = "1", features = [] }
 
 [dependencies]
-tauri = { version = "1", features = [ "fs-all", "shell-open"] }
+tauri = { version = "1", features = ["fs-all"] }
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
 rusqlite = { version = "0.27", features = ["bundled"] }
+windows = "0.28.0" # Добавьте эту строку для использования windows subsystem
 
 [features]
 # This feature is used for production builds or when a dev server is not specified, DO NOT REMOVE!!
 custom-protocol = ["tauri/custom-protocol"]
+
 
 
 

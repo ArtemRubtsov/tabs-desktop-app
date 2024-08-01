@@ -1,6 +1,10 @@
+#![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 use rusqlite::{params, Connection, Result};
 use tauri::Builder;
 use std::path::PathBuf;
+
+
+
 
 fn main() {
     let mut db_path = PathBuf::from(env!("CARGO_MANIFEST_DIR"));

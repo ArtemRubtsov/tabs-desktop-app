@@ -26,7 +26,7 @@
       "all": false,
       "shell": {
         "all": false,
-        "open": true
+        "open": false
       }
     },
     "windows": [
@@ -42,7 +42,7 @@
     "bundle": {
       "active": true,
       "targets": "all",
-      "identifier": "com.tauri.dev",
+      "identifier": "com.tabs.mytabsapp",
       "icon": [
         "icons/32x32.png",
         "icons/128x128.png",
