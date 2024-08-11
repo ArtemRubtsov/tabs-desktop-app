@@ -1,37 +1,43 @@
 import { PlusCircleTwoTone} from '@ant-design/icons';
 import { useCopyToClipboard } from '@uidotdev/usehooks';
 import { Card } from 'antd';
-import { TabItemForm } from './Tab/TabItemForm';
+import { TabItemForm } from './TabItemForm/TabItemForm';
 import { useState } from 'react';
-
-const gridStyle: React.CSSProperties = {
-    width: '25%',
-    textAlign: 'center',
-    cursor: 'pointer'
-  };
+import { Tab } from './Tab/Tab';
 
 
 type Props = {
     name: string
 }
 
+type tabs = { 
+  id: string;
+  linkName: string;
+}
+
 export const TabsWrapper = ({name}: Props) => {
    const  [copiedText, copiedToClipBoard] = useCopyToClipboard()
-
-   const [tabs, setTabs] = useState<string[]>([])
+   const [tabs, setTabs] = useState<tabs[]>([])
 
     const onCopyText = () => {
         console.log(name)
         return copiedToClipBoard(name)
     }
-    const addTab = (tab: string) => {
-      setTabs([...tabs, tab])
+    const addTab = (tabName: string, id: string) => {
+      setTabs([...tabs, {id, linkName: tabName}])
     }
 
   return (
     <>
       <Card title="Card Title">
-        <TabItemForm addTab={addTab}/>
+        <div style={{display: 'flex', flexWrap: 'wrap'}}>
+          {tabs.map((tab) => {
+              return (
+                <Tab key={tab.id} linkName={tab.linkName}/> 
+              )
+            })}
+          <TabItemForm addTab={addTab}/>
+        </div>
       </Card>
     </>
   )
