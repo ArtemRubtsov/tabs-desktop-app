@@ -5,6 +5,7 @@ import {
     MenuUnfoldOutlined,
 } from "@ant-design/icons";
 import { items } from '../Menu/Menu';
+import {TabsWrapper} from '../TabsWrapper/TabsWrapper';
 
 
 type LayuotWrapperType = {
@@ -49,12 +50,8 @@ export const LayoutWrapper = ({auth}: LayuotWrapperType) => {
                            borderRadius: borderRadiusLG,
                        }}
                    >
-                       Content
-
+                       <TabsWrapper name='jqefiopjweopfijwpfowjeopfjw'/>
                    </Content>
-                    <Footer>
-                        123
-                    </Footer>
                </Layout>
            </Layout>
        </>
